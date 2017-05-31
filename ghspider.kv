@@ -1,0 +1,31 @@
+#:kivy 1.0.9
+
+<GHSpiderWidget>:
+    GridLayout:
+        rows:3
+        size_hint: 1, 1
+        top: root.top
+        width: root.width
+        height: root.height
+        Label:
+            text: "Hello World"
+        GridLayout:
+            cols: 1
+            rows: 2
+            GridLayout:
+                cols: 2
+                rows: 2
+                Label:
+                    text: "GitHub username: "
+                TextInput:
+                    id: ghuser_ti
+                Label:
+                    text: "Target Path: "
+                TextInput:
+                    id: targetpath_ti
+            Button:
+                text: "Backup!"
+                on_press: root.gather_and_backup({'ghuser_ti': ghuser_ti, 'targetpath_ti': targetpath_ti, 'output_ti': output_ti})
+        TextInput:
+            text: "Result"
+            id: output_ti
