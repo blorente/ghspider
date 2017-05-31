@@ -8,7 +8,9 @@
         width: root.width
         height: root.height
         Label:
-            text: "Hello World"
+            text: "Welcome to GitHub Spider"
+            font_size: 34
+            size_hint: 1, 0.5
         GridLayout:
             cols: 1
             rows: 2
@@ -19,13 +21,16 @@
                     text: "GitHub username: "
                 TextInput:
                     id: ghuser_ti
+                    size_hint: 0.7, 1
                 Label:
                     text: "Target Path: "
                 TextInput:
                     id: targetpath_ti
+                    size_hint: 0.7, 1
             Button:
                 text: "Backup!"
                 on_press: root.gather_and_backup({'ghuser_ti': ghuser_ti, 'targetpath_ti': targetpath_ti, 'output_ti': output_ti})
         TextInput:
             text: "Result"
             id: output_ti
+            size_hint: 1, 1.5
